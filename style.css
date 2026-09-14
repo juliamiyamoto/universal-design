@@ -1,11 +1,11 @@
 body {
-    margin: 0;
+    margin: 1.5;
     font-family: Arial, sans-serif;
 }
 
 
 nav {
-    background-color: pink;
+    background-color: rgb(228, 141, 194);
     color: white;
     padding: 15px 40px;
 
