@@ -1,8 +1,7 @@
 body {
-    margin: 42px;
+    margin: 0;
     font-family: Arial, sans-serif;
 }
-
 
 nav {
     background-color: rgb(228, 141, 194);
@@ -35,9 +34,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-section {
-    min-height: 100vh;
-    padding: 60px;
+main{
+   
+    padding: 45px;
 }
 
 #home {
