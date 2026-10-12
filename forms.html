@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        input:focus {
+            background: black;
+            color:white;
+            outline: 2px solid yellow;
+        }
+        input:valid{
+           outline: 2px solid green;
+        }
+        input:invalid{
+            outline: 2px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Accessible Forms</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Form Example</h2>
+            <form id="my-form" method="post">
+            <fieldset>
+                <legend>Give us your information!</legend>
+                <label for="username">
+                   What is your name?
+                   <input type="text" id="username" required>
+                </label>
+                <label for="email">
+                    What is your email?
+                    <input type="email" id="email" required>
+                </label>
+                <label for="website">
+                    What is your website?
+                    <input type="url" id="website">
+                </label>
+                <label for="phone">
+                    What is your phone number?
+                    <input type="tel" id="phone" minlength="7">
+                </label>
+                <label for="age">
+                    How old are you?
+                    <input type="number" id="age" required>
+                </label>
+                <label for="password">
+                    What is your password?
+                    <input type="password" id="password" maxlength="20" minlength="5" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])" required>
+                </label>
+                <input type="submit">
+            </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
