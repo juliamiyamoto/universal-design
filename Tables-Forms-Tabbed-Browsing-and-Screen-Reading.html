@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottlenose Dolphin: Species, Senses and Conservation</title>
+    <meta name="description" content="The bottlenose dolphin's species, body, senses, intelligence and conservation, with accessible data tables and a sighting report form.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Ccircle%20cx='8'%20cy='8'%20r='8'%20fill='%230B5A73'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Domine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_downward,eco,error,format_list_bulleted,hearing,info,psychology,send,straighten,visibility&display=block" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #F4F8F9;
+            --ink: #12303A;
+            --accent: #0B5A73;
+            --error: #A3261B;
+            --field: #FFFFFF;
+            --rule: #5A7480;
+            --tint: #DCEBEF;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 1.5rem;
+        }
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Atkinson Hyperlegible", Verdana, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+        h1,
+        h2,
+        h3 {
+            font-family: "Domine", Georgia, serif;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--accent);
+        }
+        h1 {
+            font-size: clamp(2.25rem, 7vw, 3.25rem);
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.875rem;
+            margin: 0 0 1rem;
+        }
+        h3 {
+            font-size: 1.375rem;
+            margin: 2rem 0 0.5rem;
+        }
+        p {
+            margin: 0 0 1rem;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+        a {
+            color: var(--ink);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+        a:hover {
+            color: var(--accent);
+        }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        summary:focus-visible,
+        .table-scroll:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 3px;
+        }
+        abbr[title] {
+            text-decoration: underline dotted;
+            text-underline-offset: 3px;
+        }
+        dfn {
+            font-style: normal;
+            font-weight: 700;
+        }
+        mark {
+            background: #FFE08A;
+            color: var(--ink);
+            padding: 0 0.15em;
+        }
+        .material-symbols-outlined {
+            display: inline-block;
+            width: 1.25em;
+            overflow: hidden;
+            font-size: 1.25em;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        /* Skip link waits above the page, then drops down when it takes focus */
+        .skip-link {
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--ink);
+            color: var(--paper);
+            font-weight: 700;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transform: translateY(-110%);
+            transition: transform 0.2s ease-out;
+        }
+        .skip-link:focus {
+            transform: translateY(0);
+            color: var(--paper);
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .wrap {
+            max-width: 44rem;
+            margin-inline: auto;
+            padding-inline: 1rem;
+        }
+        .page-header {
+            padding-block: 3.5rem 2rem;
+        }
+        .tagline {
+            margin: 0.75rem 0 0;
+            font-size: 1.375rem;
+            line-height: 1.4;
+        }
+        .page-nav {
+            background: var(--tint);
+            padding-block: 1.25rem;
+        }
+        .page-nav h2 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        .page-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem 1.25rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .page-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding-block: 0.5rem;
+        }
+        main:focus {
+            outline: none;
+        }
+        main > section {
+            padding-block: 2.5rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.25rem;
+        }
+        figure {
+            margin: 1.5rem 0;
+        }
+        figcaption {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        .quote {
+            padding-left: 1.25rem;
+            border-left: 4px solid var(--accent);
+        }
+        blockquote {
+            margin: 0;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+        blockquote p {
+            margin: 0;
+        }
+        dl {
+            margin: 0 0 1.5rem;
+        }
+        dt {
+            font-weight: 700;
+        }
+        dd {
+            margin: 0 0 1rem;
+        }
+        aside {
+            margin-block: 2rem 0;
+            padding: 1.25rem;
+            background: var(--tint);
+            border-radius: 0.5rem;
+        }
+        aside h3 {
+            margin-top: 0;
+        }
+        aside p:last-child {
+            margin-bottom: 0;
+        }
+        details {
+            margin-top: 2rem;
+            border: 1px solid var(--rule);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+        }
+        details p {
+            margin: 0.75rem 0 0;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            margin-block: 1.5rem;
+        }
+        table {
+            width: 100%;
+            min-width: 36rem;
+            border-collapse: collapse;
+        }
+        caption {
+            text-align: left;
+            font-weight: 700;
+            padding-bottom: 0.75rem;
+        }
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid var(--rule);
+            text-align: left;
+            vertical-align: top;
+        }
+        thead th {
+            background: var(--ink);
+            color: var(--paper);
+        }
+        tbody th {
+            background: var(--tint);
+        }
+
+        form {
+            max-width: 34rem;
+        }
+        fieldset {
+            margin: 0 0 1.5rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--rule);
+            border-radius: 0.5rem;
+        }
+        legend {
+            padding-inline: 0.5rem;
+            font-weight: 700;
+        }
+        .field {
+            margin-bottom: 1.25rem;
+        }
+        .field:last-child {
+            margin-bottom: 0;
+        }
+        .field > label {
+            display: block;
+            font-weight: 700;
+        }
+        .required {
+            font-weight: 400;
+        }
+        .hint {
+            margin: 0 0 0.25rem;
+            font-size: 1rem;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            min-height: 2.75rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--field);
+            color: var(--ink);
+            border: 2px solid var(--ink);
+            border-radius: 0.25rem;
+            font: inherit;
+        }
+        input[aria-invalid="true"],
+        textarea[aria-invalid="true"] {
+            border-color: var(--error);
+            border-width: 3px;
+        }
+        fieldset fieldset {
+            margin-bottom: 0;
+        }
+        .choice {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            min-height: 2.75rem;
+        }
+        .choice input {
+            flex: none;
+            width: 1.375rem;
+            height: 1.375rem;
+            margin: 0;
+            accent-color: var(--accent);
+        }
+        .error {
+            display: flex;
+            gap: 0.375rem;
+            margin: 0.25rem 0 0;
+            color: var(--error);
+            font-weight: 700;
+        }
+        .error[hidden] {
+            display: none;
+        }
+        button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.75rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: 0;
+            border-radius: 0.25rem;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        button:hover {
+            background: var(--ink);
+        }
+        output {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .skip-link {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <a class="skip-link" href="#main"><span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_downward</span> Skip to main content</a>
+        <div class="wrap">
+            <hgroup>
+                <h1>Bottlenose Dolphin</h1>
+                <p class="tagline">A toothed whale of warm and temperate seas, found everywhere except the Arctic and Antarctic Circle regions.</p>
+            </hgroup>
+        </div>
+    </header>
+
+    <nav class="page-nav" aria-labelledby="nav-heading">
+        <div class="wrap">
+            <h2 id="nav-heading">On this page</h2>
+            <ul>
+                <li><a href="#overview"><span class="material-symbols-outlined" aria-hidden="true" translate="no">info</span> Overview</a></li>
+                <li><a href="#species"><span class="material-symbols-outlined" aria-hidden="true" translate="no">format_list_bulleted</span> Species</a></li>
+                <li><a href="#body"><span class="material-symbols-outlined" aria-hidden="true" translate="no">straighten</span> The body</a></li>
+                <li><a href="#senses"><span class="material-symbols-outlined" aria-hidden="true" translate="no">hearing</span> Senses</a></li>
+                <li><a href="#intelligence"><span class="material-symbols-outlined" aria-hidden="true" translate="no">psychology</span> Intelligence</a></li>
+                <li><a href="#conservation"><span class="material-symbols-outlined" aria-hidden="true" translate="no">eco</span> People and conservation</a></li>
+                <li><a href="#sighting"><span class="material-symbols-outlined" aria-hidden="true" translate="no">visibility</span> Report a sighting</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="wrap" tabindex="-1">
+        <section id="overview" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">Overview</h2>
+            <figure>
+                <img src="bottlenose-dolphin.jpg" width="960" height="638" fetchpriority="high" alt="A gray bottlenose dolphin leaping from the foaming wake of a boat, its short snout pointing forward and dorsal fin raised, with blue water and a green shoreline behind it.">
+                <figcaption>A dolphin surfs the wake of a research boat on the Banana River, near the Kennedy Space Center. Photo: <abbr title="National Aeronautics and Space Administration">NASA</abbr>.</figcaption>
+            </figure>
+            <p>The <dfn>bottlenose dolphin</dfn> is a toothed whale in the genus <i lang="la">Tursiops</i>. They are common, cosmopolitan members of the family Delphinidae, the family of oceanic dolphins. Bottlenose dolphins inhabit warm and temperate seas worldwide, being found everywhere except for the Arctic and Antarctic Circle regions.</p>
+            <p>Their name derives from the Latin <i lang="la">tursio</i> (dolphin) and <i lang="la">truncatus</i> for the truncated teeth (the type specimen was old and had worn down teeth; this is not a typical characteristic of most members of the species).</p>
+            <p>Bottlenose dolphins gained popularity from aquarium shows and television programs such as <cite>Flipper</cite>.</p>
+        </section>
+
+        <section id="species" aria-labelledby="species-heading">
+            <h2 id="species-heading">Species</h2>
+            <p>Molecular studies show the genus contains three species. The Society for Marine Mammalogy's Committee on Taxonomy presently recognizes these three, while the <abbr title="International Union for Conservation of Nature">IUCN</abbr>, on their Red List of endangered species, currently recognises only two species of bottlenose dolphins.</p>
+            <div class="table-scroll" role="region" aria-labelledby="species-caption" tabindex="0">
+                <table>
+                    <caption id="species-caption">The three recognized species of bottlenose dolphin</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Common name</th>
+                            <th scope="col">Scientific name</th>
+                            <th scope="col">Where it lives</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Common bottlenose dolphin</th>
+                            <td><i lang="la">Tursiops truncatus</i></td>
+                            <td>Coastal and oceanic habitats of most tropical to temperate oceans</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Indo-Pacific bottlenose dolphin</th>
+                            <td><i lang="la">Tursiops aduncus</i></td>
+                            <td>Coastal waters around India, northern Australia, South China, the Red Sea, and the eastern coast of Africa</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tamanend's bottlenose dolphin</th>
+                            <td><i lang="la">Tursiops erebennus</i></td>
+                            <td>Shallower coastal waters of the western North Atlantic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <details>
+                <summary>Hybrids and fossil species</summary>
+                <p>Bottlenose dolphins have been known to hybridize with other dolphin species. The best known hybrid is the wholphin, a false killer whale–bottlenose dolphin hybrid.</p>
+                <p>Bottlenose dolphins appeared during the Miocene.</p>
+            </details>
+        </section>
+
+        <section id="body" aria-labelledby="body-heading">
+            <h2 id="body-heading">The body</h2>
+            <p>The bottlenose dolphin can reach a length of just over 4 <abbr title="meters">m</abbr> (13 <abbr title="feet">ft</abbr>). Its color varies considerably, is usually dark gray on the back and lighter gray on the flanks. This is called countershading and is a form of camouflage.</p>
+
+            <h3>Anatomy</h3>
+            <dl>
+                <dt>Rostrum</dt>
+                <dd>Their elongated upper and lower jaws form what is called a rostrum, or snout, which gives the animal its common name.</dd>
+                <dt>Blowhole</dt>
+                <dd>The real, functional nose is the blowhole on top of its head.</dd>
+                <dt>Teeth</dt>
+                <dd>Bottlenose dolphins have 18 to 28 conical teeth on each side of each jaw.</dd>
+                <dt>Flukes and dorsal fin</dt>
+                <dd>The flukes (lobes of the tail) and dorsal fin are formed of dense connective tissue and do not contain bone or muscle. The animal propels itself by moving the flukes up and down.</dd>
+                <dt>Pectoral flippers</dt>
+                <dd>The pectoral flippers (at the sides of the body) are for steering; they contain bones homologous to the forelimbs of land mammals.</dd>
+            </dl>
+
+            <h3>By the numbers</h3>
+            <div class="table-scroll" role="region" aria-labelledby="numbers-caption" tabindex="0">
+                <table>
+                    <caption id="numbers-caption">Typical bottlenose dolphin measurements, with their range or limit</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Measure</th>
+                            <th scope="col">Typical</th>
+                            <th scope="col">Range or limit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Weight</th>
+                            <td>Average of 300&nbsp;<abbr title="kilograms">kg</abbr> (660&nbsp;<abbr title="pounds">lb</abbr>)</td>
+                            <td>150 to 650&nbsp;<abbr title="kilograms">kg</abbr> (330 to 1,430&nbsp;<abbr title="pounds">lb</abbr>)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Swimming speed</th>
+                            <td>5 to 11&nbsp;<abbr title="kilometers per hour">km/h</abbr></td>
+                            <td>Bursts of up to 29 to 35&nbsp;<abbr title="kilometers per hour">km/h</abbr>, sustained only for a short time</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Lifespan</th>
+                            <td>More than 40 years</td>
+                            <td>Some females exceed 60 years, though less than 2% of all bottlenose dolphins live that long</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Breathing</th>
+                            <td>Two to three times per minute</td>
+                            <td>Can remain submerged for up to 20 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Bottlenose dolphins can jump to a height of 6 metres (20 feet) in the air. Dolphins can breathe while <q>half-asleep</q>: during the sleeping cycle, one brain hemisphere remains active, while the other hemisphere shuts down.</p>
+        </section>
+
+        <section id="senses" aria-labelledby="senses-heading">
+            <h2 id="senses-heading">Senses</h2>
+            <article aria-labelledby="echolocation-heading">
+                <h3 id="echolocation-heading">Echolocation</h3>
+                <p>The dolphin's search for food is aided by a form of sonar known as <dfn>echolocation</dfn>: it locates objects by producing sounds and listening for the echoes. Echolocation tells the dolphins the shape, size, speed, distance, and location of the object. Bottlenose dolphins are also able to extract shape information, suggesting they are able to form an <q>echoic image</q> or sound picture of their targets.</p>
+            </article>
+            <article aria-labelledby="eyesight-heading">
+                <h3 id="eyesight-heading">Eyesight and smell</h3>
+                <p>Dolphins have sharp eyesight. Their horseshoe-shaped, double-slit pupils enable dolphins to have good vision both in air and underwater. By contrast, a bottlenose's sense of smell is poor, because its blowhole, the analog to the nose, is closed when underwater and it opens only for breathing.</p>
+            </article>
+            <article aria-labelledby="communication-heading">
+                <h3 id="communication-heading">Communication</h3>
+                <p>Bottlenose dolphins communicate through burst pulsed sounds, whistles, and body language. Examples of body language include leaping out of the water, snapping jaws, slapping the tail on the surface and butting heads. Each animal has a uniquely identifying, frequency-modulated narrow-band signature vocalization (<dfn>signature whistle</dfn>).</p>
+            </article>
+        </section>
+
+        <section id="intelligence" aria-labelledby="intelligence-heading">
+            <h2 id="intelligence-heading">Intelligence</h2>
+            <p>Cognitive abilities that have been investigated include concept formation, sensory skills, and mental representations. Such research has been ongoing since the 1970s.</p>
+
+            <h3>Tool use and culture</h3>
+            <p>At least some wild bottlenose dolphins use tools. In Shark Bay, off Western Australia, dolphins place a marine sponge on their rostrum, presumably to protect it when searching for food on the sandy sea bottom. A <time datetime="2005">2005</time> study showed <mark>mothers most likely teach the behavior to their offspring</mark>, evincing culture (behavior learned from other species members).</p>
+
+            <aside aria-labelledby="strand-heading">
+                <h3 id="strand-heading">Strand feeding</h3>
+                <p>Along the beaches and tidal marshes of South Carolina and Georgia in the United States, bottlenose dolphins cooperatively herd prey fish onto steep and sandy banks in a practice known as <dfn>strand feeding</dfn>. The dolphins follow the fish, stranding themselves briefly, to eat their prey before twisting their bodies back and forth in order to slide back into the water.</p>
+            </aside>
+        </section>
+
+        <section id="conservation" aria-labelledby="conservation-heading">
+            <h2 id="conservation-heading">People and conservation</h2>
+            <p>The species sometimes shows curiosity towards humans in or near water.</p>
+            <figure class="quote">
+                <blockquote cite="https://en.wikipedia.org/w/index.php?title=Bottlenose_dolphin&amp;oldid=1376387639">
+                    <p>Four lifeguards, swimming 100 m (330 ft) off the coast near Whangārei, were approached by a shark (reportedly a great white shark). Bottlenose dolphins herded the swimmers together and surrounded them for 40 minutes, preventing the shark from attacking, as they slowly swam to shore.</p>
+                </blockquote>
+                <figcaption><cite>Bottlenose dolphin</cite>, Wikipedia, on an event in New Zealand in <time datetime="2004-11">November 2004</time></figcaption>
+            </figure>
+
+            <h3>Threats</h3>
+            <ul>
+                <li>Between <time datetime="1950">1950</time> and <time datetime="2020">2020</time>, about four million dolphins have drowned in fishing nets.</li>
+                <li>Heavy metals including mercury, <abbr title="polychlorinated biphenyls">PCBs</abbr> and <abbr title="dichlorodiphenyltrichloroethane">DDT</abbr> are of great concern. These pollutants can cause harm in dolphins growth development, reproduction, and immunity.</li>
+                <li>In coastal regions, dolphins run the risk of colliding with boats.</li>
+            </ul>
+
+            <h3>Conservation status</h3>
+            <p>Bottlenose dolphins are not endangered. Their future is stable because of their abundance and adaptability. However, specific populations are threatened due to various environmental changes. In United States waters, hunting and harassing of marine mammals is forbidden in almost all circumstances, from passage of the Marine Mammal Protection Act of <time datetime="1972">1972</time>.</p>
+        </section>
+
+        <section id="sighting" aria-labelledby="sighting-heading">
+            <h2 id="sighting-heading">Report a sighting</h2>
+            <p>Seen a bottlenose dolphin? Tell us where and what it was doing. This form is a class demonstration, so nothing you enter is sent anywhere.</p>
+            <form id="sighting-form" method="post">
+                <fieldset>
+                    <legend>Your details</legend>
+                    <div class="field">
+                        <label for="name">Name <span class="required">(required)</span></label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <p class="error" id="name-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Enter your name.</p>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email <span class="required">(required)</span></label>
+                        <p class="hint" id="email-hint">For example, name@example.com</p>
+                        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-hint" required>
+                        <p class="error" id="email-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Enter an email address like name@example.com.</p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Your sighting</legend>
+                    <div class="field">
+                        <label for="date">Date of sighting <span class="required">(required)</span></label>
+                        <input type="date" id="date" name="date" required>
+                        <p class="error" id="date-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Enter the date of your sighting.</p>
+                    </div>
+                    <div class="field">
+                        <label for="location">Location <span class="required">(required)</span></label>
+                        <p class="hint" id="location-hint">For example, Shark Bay, Western Australia</p>
+                        <input type="text" id="location" name="location" aria-describedby="location-hint" required>
+                        <p class="error" id="location-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Enter where you saw the dolphin.</p>
+                    </div>
+                    <div class="field">
+                        <label for="count">Number of dolphins <span class="required">(optional)</span></label>
+                        <input type="number" id="count" name="count" min="1" step="1" inputmode="numeric">
+                        <p class="error" id="count-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Enter a whole number, 1 or more.</p>
+                    </div>
+                    <div class="field">
+                        <fieldset id="behavior">
+                            <legend>What was it doing? <span class="required">(required)</span></legend>
+                            <div class="choice">
+                                <input type="radio" id="behavior-leaping" name="behavior" value="leaping" required>
+                                <label for="behavior-leaping">Leaping out of the water</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="behavior-feeding" name="behavior" value="feeding">
+                                <label for="behavior-feeding">Feeding</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="behavior-logging" name="behavior" value="logging">
+                                <label for="behavior-logging">Swimming slowly near the surface</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="behavior-wake" name="behavior" value="wake">
+                                <label for="behavior-wake">Surfing a boat's wake</label>
+                            </div>
+                            <p class="error" id="behavior-error" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">error</span> Choose what the dolphin was doing.</p>
+                        </fieldset>
+                    </div>
+                    <div class="field">
+                        <label for="notes">Anything else? <span class="required">(optional)</span></label>
+                        <textarea id="notes" name="notes" rows="4"></textarea>
+                    </div>
+                    <div class="choice">
+                        <input type="checkbox" id="reply" name="reply">
+                        <label for="reply">You may email me about this sighting</label>
+                    </div>
+                </fieldset>
+                <button type="submit"><span class="material-symbols-outlined" aria-hidden="true" translate="no">send</span> Send report</button>
+                <output id="form-status" for="name email date location count"></output>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById('sighting-form');
+        const status = document.getElementById('form-status');
+        const checks = [
+            { target: form.elements.name, error: 'name-error', label: 'name' },
+            { target: form.elements.email, error: 'email-error', label: 'email' },
+            { target: form.elements.date, error: 'date-error', label: 'date of sighting' },
+            { target: form.elements.location, error: 'location-error', label: 'location' },
+            { target: form.elements.count, error: 'count-error', label: 'number of dolphins' },
+            { target: document.getElementById('behavior'), error: 'behavior-error', label: 'what it was doing' }
+        ];
+
+        
+        form.noValidate = true;
+
+        function showResult(check) {
+            
+            const control = check.target.tagName === 'FIELDSET' ? check.target.querySelector('input') : check.target;
+            const valid = control.checkValidity();
+            const describedBy = (check.target.getAttribute('aria-describedby') || '')
+                .split(' ')
+                .filter((id) => id && id !== check.error);
+            if (!valid) {
+                describedBy.push(check.error);
+            }
+            document.getElementById(check.error).hidden = valid;
+            if (describedBy.length) {
+                check.target.setAttribute('aria-describedby', describedBy.join(' '));
+            } else {
+                check.target.removeAttribute('aria-describedby');
+            }
+            if (check.target.tagName !== 'FIELDSET') {
+                if (valid) {
+                    check.target.removeAttribute('aria-invalid');
+                } else {
+                    check.target.setAttribute('aria-invalid', 'true');
+                }
+            }
+            return valid;
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const failed = checks.filter((check) => !showResult(check));
+            if (failed.length) {
+                status.textContent = `Please check: ${failed.map((check) => check.label).join(', ')}.`;
+                const first = failed[0].target;
+                (first.tagName === 'FIELDSET' ? first.querySelector('input') : first).focus();
+            } else {
+                status.textContent = '';
+            }
+        });
+
+        
+        checks.forEach((check) => {
+            check.target.addEventListener('input', () => {
+                if (!document.getElementById(check.error).hidden) {
+                    showResult(check);
+                    status.textContent = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

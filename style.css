@@ -3,14 +3,21 @@ body {
     font-family: Arial, sans-serif;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 nav {
     background-color: rgb(228, 141, 194);
-    color: white;
+    color: #212A22;
     padding: 15px 40px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 40px;
 }
 
 nav h1 {
@@ -20,13 +27,14 @@ nav h1 {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 10px 30px;
     margin: 0;
     padding: 0;
 }
 
 nav a {
-    color: white;
+    color: #212A22;
     text-decoration: none;
 }
 
