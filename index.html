@@ -4,36 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me | Universal Design</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <nav>
-     <h1>Universal Design</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="wiki.html">Semantic html5 Part 1</a></li>
-            <li><a href="semantic-advanced.html">Semantic html5 Part 2</a></li>
-            <li><a href="tables.html">Tables</a></li>
-            <li><a href="forms.html">Forms</a></li>
-            <li><a href="skip-nav-icons.html">Skip Nav &amp; Icons</a></li>
-            <li><a href="Tables-Forms-Tabbed-Browsing-and-Screen-Reading.html">Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
-            <li><a href="assignment3.html">Assignment 3</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <h1>Universal Design</h1>
 
-    <main>
-        <h2>About Me</h2>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="wiki.html">Semantic html5 Part 1</a></li>
+                <li><a href="semantic-advanced.html">Semantic html5 Part 2</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="skip-nav-icons.html">Skip Nav &amp; Icons</a></li>
+                <li><a href="Tables-Forms-Tabbed-Browsing-and-Screen-Reading.html">Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
+                <li><a href="6-Accessible-CSS-Layout.html">6 Accessible CSS Layout</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <img src="homepage.jpeg" alt="Julia with a fork and knife in hand with italian in front." class="profile-photo center-image">
+    <main id="main-content">
+        <div class="content-wrapper">
+            <section aria-labelledby="about-heading">
+                <h2 id="about-heading">About Me</h2>
 
-        <p>
-            Hi, I'm Julia Miyamoto! I am from Los Angeles, California and currently a senior in CTD. Little about me:
-            I love the ocean, traveling, and eating (also cooking!). When I'm not at work or school, I enjoy hanging out with friends,
-            going out to eat, and sidequesting. Excited for this semester and looking forward to learning more about web design and accessibility!
-        </p>
+                <img src="homepage.jpeg" alt="Julia holding a fork and knife with Italian food in front of her." class="profile-photo center-image" width="360" height="480">
+
+                <p>
+                    Hi, I'm Julia Miyamoto! I am from Los Angeles, California and currently a senior in CTD. Little about me:
+                    I love the ocean, traveling, and eating (also cooking!). When I'm not at work or school, I enjoy hanging out with friends,
+                    going out to eat, and sidequesting. Excited for this semester and looking forward to learning more about web design and accessibility!
+                </p>
+            </section>
+        </div>
     </main>
 
 </body>

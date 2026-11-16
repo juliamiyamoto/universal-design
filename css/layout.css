@@ -1,0 +1,331 @@
+/* ==========================================================
+   Lab 6: Accessible CSS Layout
+   Mobile-first: the base styles are for phones. Media queries
+   at 600px (tablet) and 1024px (desktop) rearrange the grid.
+   ========================================================== */
+
+/* ---------- Color scheme ----------
+   Ocean palette (replace with / record your Adobe Color theme link here):
+   Navy  #0B3954 | Teal #087E8B | Foam #E3F2F1 | Sand #F5EBDD | Coral #B5452F | Ink #1D2B36
+
+   Contrast checked (WCAG AA needs 4.5:1 for normal text):
+   white on navy 12.2:1, ink on sand 12.3:1, ink on foam 12.6:1,
+   white on teal 4.8:1, coral on sand 4.6:1.
+   Teal text on sand fails (4.1:1), so teal is only used as a
+   background or border color. */
+:root {
+    --navy: #0B3954;
+    --teal: #087E8B;
+    --foam: #E3F2F1;
+    --sand: #F5EBDD;
+    --coral: #B5452F;
+    --ink: #1D2B36;
+    --white: #FFFFFF;
+
+    --font-heading: "Fraunces", Georgia, serif;
+    --font-body: "Atkinson Hyperlegible", Arial, sans-serif;
+
+    --gap: 1rem;
+    --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;   /* 18px */
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    color: var(--navy);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--navy);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+/* Clear focus indicator for keyboard users */
+a:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+/* ---------- Skip link ---------- */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* ==========================================================
+   Grid layout (2D)
+   Mobile: a single column. The nav moves to the bottom of the
+   page (just above the footer) so it sits within thumb reach.
+   ========================================================== */
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "facts"
+        "tips"
+        "nav"
+        "footer";
+    gap: var(--gap);
+    max-width: 1200px;     /* auto-centering wrapper */
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.page-header { grid-area: header; }
+.page-nav    { grid-area: nav; }
+.page-main   { grid-area: main; }
+.aside-facts { grid-area: facts; }
+.aside-tips  { grid-area: tips; }
+.page-footer { grid-area: footer; }
+
+/* ---------- Header ---------- */
+.page-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+}
+
+.page-header h1 {
+    color: var(--white);
+    margin: 0.25rem 0;
+    font-size: clamp(1.75rem, 6vw, 3rem);
+}
+
+.eyebrow,
+.tagline {
+    margin: 0;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   Nav (1D flexbox)
+   Mobile: vertical stack with large, full-width tap targets
+   so the links are easy to reach and press with a thumb.
+   ========================================================== */
+.page-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.page-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;          /* comfortable touch target */
+    padding: 0.75rem 1rem;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius);
+}
+
+.page-nav a:hover,
+.page-nav a:focus-visible {
+    background: var(--navy);
+    text-decoration: underline;
+}
+
+.page-nav a[aria-current="page"] {
+    background: var(--navy);
+    text-decoration: underline;
+}
+
+/* ---------- Main ---------- */
+.page-main,
+.aside-facts,
+.aside-tips {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+}
+
+.page-main {
+    background: var(--white);
+}
+
+.page-main h2 {
+    margin-top: 0;
+}
+
+figure {
+    margin: 0 0 1.5rem;
+}
+
+figure img {
+    border-radius: var(--radius);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ---------- Asides ---------- */
+.aside-facts {
+    background: var(--foam);
+    border-top: 6px solid var(--teal);
+}
+
+.aside-tips {
+    background: var(--foam);
+    border-top: 6px solid var(--coral);
+}
+
+.aside-facts h2,
+.aside-tips h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+dl {
+    margin: 0;
+}
+
+dl div {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--teal);
+}
+
+dl div:last-child {
+    border-bottom: none;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0;
+}
+
+.aside-tips ul {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.aside-tips li + li {
+    margin-top: 0.75rem;
+}
+
+/* ---------- Footer ---------- */
+.page-footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.page-footer p {
+    margin: 0.25rem 0;
+}
+
+.page-footer a {
+    color: var(--white);
+}
+
+.page-footer a:focus-visible {
+    outline-color: var(--white);
+}
+
+/* ==========================================================
+   Tablet: 600px and up
+   Main spans the full width; the two asides sit side by side
+   underneath it. The nav switches to a horizontal row.
+   ========================================================== */
+@media (min-width: 600px) {
+    .page {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "nav    nav"
+            "main   main"
+            "facts  tips"
+            "footer footer";
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .page-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .page-nav a {
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ==========================================================
+   Desktop: 1024px and up
+   Three columns: facts | main | tips.
+   ========================================================== */
+@media (min-width: 1024px) {
+    .page {
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "nav    nav    nav"
+            "facts  main   tips"
+            "footer footer footer";
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .page-nav ul {
+        justify-content: center;
+    }
+
+    .page-main,
+    .aside-facts,
+    .aside-tips {
+        align-self: start;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible CSS Layout | Universal Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="page">
+        <header class="page-header">
+            <p class="eyebrow">Universal Design &middot; Lab 6</p>
+            <h1>Accessible CSS Layout</h1>
+            <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </header>
+
+    
+        <main id="main-content" class="page-main">
+            <h2>Main Content</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.
+            </p>
+
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum. Curabitur pretium tincidunt lacus, nulla gravida orci a odio.
+            </p>
+
+            <h3>Consectetur Adipiscing</h3>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+            </p>
+            <p>
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+                non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            </p>
+        </main>
+
+        <aside class="aside-facts" aria-labelledby="aside-one-heading">
+            <h2 id="aside-one-heading">Aside One</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+                Sed cursus ante dapibus diam.
+            </p>
+            <p>
+                Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+            </p>
+        </aside>
+
+        <aside class="aside-tips" aria-labelledby="aside-two-heading">
+            <h2 id="aside-two-heading">Aside Two</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Fusce nec tellus sed augue semper porta.</li>
+                <li>Mauris massa, vestibulum lacinia arcu eget nulla.</li>
+            </ul>
+        </aside>
+
+        <footer class="page-footer">
+            <p>Lorem ipsum dolor sit amet &middot; Universal Design, Lab 6</p>
+            <p><a href="#main-content">Back to main content</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
