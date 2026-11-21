@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@800&display=swap');
+
+/* Colors (all pass WCAG AA contrast) */
+:root {
+    --ink: #15121F;
+    --cream: #FFF8EC;
+    --lime: #C8F560;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 2.5rem;
+}
+
+header,
+footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--cream);
+}
+
+nav a[aria-current="page"] {
+    color: var(--lime);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
